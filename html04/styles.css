@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#menu {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    position: relative;
+    z-index: 10;
+    flex: 0 0 auto;
+}
+
+.menu-item {
+    display: inline-block;
+    position: relative;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    padding: 10px;
+    list-style-type: none;
+    margin: 0;
+    z-index: 20;
+    min-width: 150px; /* min-width for better visibility */
+    font-size: 90%; /* slightly smaller font */
+}
+
+.menu-item:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#editor-container {
+    flex: 1 1 auto;
+    display: flex;
+    height: calc(100vh - 50px); /* Adjust height to fit the full viewport */
+}
+
+.CodeMirror {
+    flex: 1;
+    height: 100%; /* Ensure CodeMirror takes full height of its container */
+    width: 100%; /* Ensure CodeMirror takes full width of its container */
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #888;
+    background-color: #fff;
+}
+
+.popup-content {
+    padding: 20px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#TagList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Tag-item {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+#symbolList {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 400px; /* Make it scrollable */
+    overflow-y: auto;
+}
+
+.symbol-item {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
